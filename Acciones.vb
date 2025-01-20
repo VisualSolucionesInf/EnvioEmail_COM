@@ -67,6 +67,7 @@ Public Class Acciones
 
         Dim mensajeError = ""
         Net.ServicePointManager.ServerCertificateValidationCallback = Function() True
+        Net.ServicePointManager.SecurityProtocol = CType(3072, Net.SecurityProtocolType)
         Try
             manejadorCorreo.Enviar(mensajeError)
         Catch ex As Exception
